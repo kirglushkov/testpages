@@ -14,6 +14,8 @@
 
             let massa = parseInt(document.getElementById("auth_inputmassa_ball"));
 
+            let new_massa = massa / 1000
+
             let f_nutona = parseInt(document.getElementById("auth_inputnuton"));
 
             let speed_ball = parseInt(document.getElementById("auth_inputpace"));
@@ -22,7 +24,7 @@
 
             let cosinus = Math.cos(cos)
 
-            let formula = ((2*massa * 6 * cosinus) / f_nutona)
+            let formula = ((2*new_massa * 6 * cosinus) / f_nutona)
 
             number+= formula
 
