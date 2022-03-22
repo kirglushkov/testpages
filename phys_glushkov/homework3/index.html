@@ -8,29 +8,36 @@
 </head>
 <body>
     <script>
+
+
+
     
         function run() {
 
             let massa = parseInt(document.getElementById("auth_inputmassa_ball").value);
-            console.log(massa)
-
             let new_massa = massa / 1000
-            console.log(new_massa)
-
             let f_nutona = parseInt(document.getElementById("auth_inputnuton").value);
-            console.log(f_nutona)
-
             let speed_ball = parseInt(document.getElementById("auth_inputpace").value);
-            console.log(speed_ball)
+            let cos_degree = parseInt(document.getElementById("auth_inputcos").value);
 
-            let cos = parseInt(document.getElementById("auth_inputcos").value);
-            console.log(cos)
 
-            let cosinus = Math.cos(cos) * (-1)
-            console.log(cosinus)
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
 
-            let number = (( 2 * new_massa * speed_ball * cosinus) / f_nutona)
-            console.log(number)
+            var toRadians = function (degree) {
+                return degree * (Math.PI / 180);
+            };
+
+            function cosinus(number){
+                return roundNumber(Math.cos(toRadians(number)));
+            }
+
+            let true_cosinus = cosinus(cos_degree) * (-1)
+
+
+            let number = (( 2 * new_massa * speed_ball * true_cosinus) / f_nutona)
 
 
             document.getElementById("answer").innerText = "Ответ: " + number + " c";
