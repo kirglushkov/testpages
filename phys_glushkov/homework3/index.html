@@ -12,18 +12,25 @@
         function run() {
 
             let massa = parseInt(document.getElementById("auth_inputmassa_ball"));
+            console.log(massa)
 
             let new_massa = massa / 1000
+            console.log(new_massa)
 
             let f_nutona = parseInt(document.getElementById("auth_inputnuton"));
+            console.log(f_nutona)
 
             let speed_ball = parseInt(document.getElementById("auth_inputpace"));
+            console.log(speed_ball)
 
             let cos = parseInt(document.getElementById("auth_inputcos"));
+            console.log(cos)
 
             let cosinus = Math.cos(cos)
+            console.log(cosinus)
 
             let number = Math.round(( 2 * new_massa * speed_ball * cosinus) / f_nutona)
+            console.log(number)
 
 
             document.getElementById("answer").innerText = "Ответ: " + number + " c";
@@ -34,11 +41,8 @@
       <body>
         <div style="display: flex; margin-top: 8px" id="auth_display">
           <input id="auth_inputmassa_ball" placeholder="Введите массу мяча в граммах"></input>
-          <br>
           <input id="auth_inputpace" placeholder="Введите скорость мяча в м/с"></input>
-          <br>
           <input id="auth_inputnuton" placeholder="Введите силу удара в Н"></input>
-          <br>
           <input id="auth_inputcos" placeholder="Введите угол"></input>
         </div>
         
