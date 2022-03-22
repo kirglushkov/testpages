@@ -11,19 +11,19 @@
     
         function run() {
 
-            let massa = document.getElementById("auth_inputmassa_ball");
+            let massa = parseInt(document.getElementById("auth_inputmassa_ball").value);
             console.log(massa)
 
             let new_massa = massa / 1000
             console.log(new_massa)
 
-            let f_nutona = parseInt(document.getElementById("auth_inputnuton"));
+            let f_nutona = parseInt(document.getElementById("auth_inputnuton").value);
             console.log(f_nutona)
 
-            let speed_ball = parseInt(document.getElementById("auth_inputpace"));
+            let speed_ball = parseInt(document.getElementById("auth_inputpace").value);
             console.log(speed_ball)
 
-            let cos = parseInt(document.getElementById("auth_inputcos"));
+            let cos = parseInt(document.getElementById("auth_inputcos").value);
             console.log(cos)
 
             let cosinus = Math.cos(cos)
