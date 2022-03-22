@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework3</title>
+</head>
+<body>
+    <script>
+    
+        function run() {
+            let number = 0
+
+            let massa = parseInt(document.getElementById("auth_inputmassa_ball"));
+
+            let f_nutona = parseInt(document.getElementById("auth_inputnuton"));
+
+            let speed_ball = parseInt(document.getElementById("auth_inputpace"));
+
+            let cos = parseInt(document.getElementById("auth_inputcos"));
+
+            let cosinus = Math.cos(cos)
+
+            let formula = ((2*massa * 6 * cosinus) / f_nutona)
+
+            number+= formula
+
+            document.getElementById("answer").innerText = "Ответ: " + number + " c";
+        }
+    
+      </script>
+
+      <body>
+        <div style="display: flex; margin-top: 8px" id="auth_display">
+          <input id="auth_inputmassa_ball" placeholder="Введите массу мяча в граммах"></input>
+          <input id="auth_inputpace" placeholder="Введите координаты скорость мяча в м/с"></input>
+          <input id="auth_inputnuton" placeholder="Введите координаты силу удара в Н"></input>
+          <input id="auth_inputcos" placeholder="Введите угол"></input>
+            <button onclick="run()">Посчитать</button>
+        </div>
+        <div style="display: flex; margin-top: 8px">
+            <div id="answer" style="margin-left: 8px">Ответ: 0 c</div>
+        </div> 
+    
+</body>
+</html>
