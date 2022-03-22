@@ -10,7 +10,6 @@
     <script>
     
         function run() {
-            let number = 0
 
             let massa = parseInt(document.getElementById("auth_inputmassa_ball"));
 
@@ -24,9 +23,8 @@
 
             let cosinus = Math.cos(cos)
 
-            let formula = ((2*new_massa * 6 * cosinus) / f_nutona)
+            let number = Math.round(( 2 * new_massa * speed_ball * cosinus) / f_nutona)
 
-            number+= formula
 
             document.getElementById("answer").innerText = "Ответ: " + number + " c";
         }
@@ -36,11 +34,15 @@
       <body>
         <div style="display: flex; margin-top: 8px" id="auth_display">
           <input id="auth_inputmassa_ball" placeholder="Введите массу мяча в граммах"></input>
+          <br>
           <input id="auth_inputpace" placeholder="Введите скорость мяча в м/с"></input>
+          <br>
           <input id="auth_inputnuton" placeholder="Введите силу удара в Н"></input>
+          <br>
           <input id="auth_inputcos" placeholder="Введите угол"></input>
-            <button onclick="run()">Посчитать</button>
         </div>
+        
+        <button onclick="run()">Посчитать</button>
         <div style="display: flex; margin-top: 8px">
             <div id="answer" style="margin-left: 8px">Ответ: 0 c</div>
         </div> 
