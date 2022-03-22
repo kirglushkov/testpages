@@ -19,7 +19,8 @@
             let f_nutona = parseInt(document.getElementById("auth_inputnuton").value);
             let speed_ball = parseInt(document.getElementById("auth_inputpace").value);
             let cos_degree = parseInt(document.getElementById("auth_inputcos").value);
-
+            
+            
 
             var roundNumber = function(number, decimals) {
                 decimals = decimals || 5;
@@ -46,6 +47,10 @@
       </script>
 
       <body>
+          <div>Мяч массой m = X г, движущийся со скоростью v = Y м/с, ударяется о стенку под углом = a°
+            к нормали. Считая удар упругим, определить его продолжительность, если известно, что средняя сила удара
+            Fср = Z Н.
+            </div>
         <div style="display: flex; margin-top: 8px" id="auth_display">
           <input id="auth_inputmassa_ball" placeholder="Введите массу мяча в граммах"></input>
           <input id="auth_inputpace" placeholder="Введите скорость мяча в м/с"></input>
