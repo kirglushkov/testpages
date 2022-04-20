@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 7
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+
+            let massa = parseInt(document.getElementById("auth_inputmassa_ball").value);
+            let new_massa = massa / 1000
+            let f_nutona = parseInt(document.getElementById("auth_inputnuton").value);
+            let speed_ball = parseInt(document.getElementById("auth_inputpace").value);
+            let cos_degree = parseInt(document.getElementById("auth_inputcos").value);
+            
+            
+
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+
+            var toRadians = function (degree) {
+                return degree * (Math.PI / 180);
+            };
+
+            function cosinus(number){
+                return roundNumber(Math.cos(toRadians(number)));
+            }
+
+            let true_cosinus = cosinus(cos_degree) 
+
+
+            let number = (( 2 * new_massa * speed_ball * true_cosinus) / f_nutona)
+
+
+            document.getElementById("answer").innerText = "Ответ: " + number + " c";
+        }
+    
+      </script>
+
+      <body>
+          <div>
+            </div>
+        <div class="auth_display" id="auth_display">
+          <input id="auth_inputmassa_ball" placeholder="Введите массу мяча в граммах"></input>
+          <input id="auth_inputpace" placeholder="Введите скорость мяча в м/с"></input>
+          <input id="auth_inputnuton" placeholder="Введите силу удара в Н"></input>
+          <input id="auth_inputcos" placeholder="Введите угол"></input>
+        </div>
+        <br>  
+        <div>
+            <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>  
+        <div class="answer">
+            <div id="answer" style="margin-left: 8px">Ответ: 0 c</div>
+        </div> 
+    
+</body>
+</html>
