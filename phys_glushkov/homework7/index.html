@@ -45,21 +45,25 @@
       </script>
 
       <body>
-          <div>
-            </div>
-        <div class="auth_display" id="auth_display">
-          <input id="auth_inputmassa_ball" placeholder="Введите массу мяча в граммах"></input>
-          <input id="auth_inputpace" placeholder="Введите скорость мяча в м/с"></input>
-          <input id="auth_inputnuton" placeholder="Введите силу удара в Н"></input>
-          <input id="auth_inputcos" placeholder="Введите угол"></input>
+        <div class="container">
+            <h1><span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis a nemo, modi aliquid omnis similique ipsa ipsum distinctio ducimus officiis illum repellendus dolore optio reiciendis, hic, id quos ab eveniet.</span></h1>
+            
+        </div>
+        <div id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_inputmassa_ball" placeholder="Введите массу мяча в граммах"></input>
+                <input type="text" id="auth_inputpace" placeholder="Введите скорость мяча в м/с"></input>
+                <input type="text" id="auth_inputnuton" placeholder="Введите силу удара в Н"></input>
+                <input type="text" id="auth_inputcos" placeholder="Введите угол"></input>
+            </form>
         </div>
         <br>  
-        <div>
-            <button class="button" onclick="run()"><span>Посчитать</span></button>
-        </div>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
         <div class="answer">
-            <div id="answer" style="margin-left: 8px">Ответ: 0 c</div>
-        </div> 
+            <h1><span id="answer">Ответ: 0 c</span></h1>
+        </div>
     
 </body>
 </html>

@@ -1,48 +1,128 @@
-.button {
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #f4511e;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 28px;
-    padding: 20px;
-    width: 200px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
-  }
-  
-.button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
 
-.button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-.button:hover span {
-    padding-right: 25px;
-  }
-  
-.button:hover span:after {
-    opacity: 1;
-    right: 0;
-}
+
+@import url('https://fonts.googleapis.com/css?family=Titan+One');
+
+body{text-align:center}
+div{display:block;position:absolute}
+
+.container{
+	width: 100%;
+	height: 100%;
+	top:10%;
+	left:50%;
+	transform:translate(-50%,-50%)
+	}
+
+h1{
+	background:#fff;
+	width:100%;
+	height:100%;
+  margin: 0;
+  padding: 0;
+  position: "absolute";
+	display:flex;
+	font-family:'Titan One',cursive;
+	font-size: 30px;
+	font-weight:700;
+	flex-flow:row wrap;
+	align-content:center;
+	justify-content:center
+	}
+
+h1 span{width:100%;position:relative}
+
+h1 span:before{
+	background:linear-gradient(45deg,#fc5c7d,#6a82fb,#fc5c7d);
+	width:100%;
+	height:100%;
+	display:block;
+	position:absolute;
+	content:"";
+	mix-blend-mode:screen
+	}
+
 
 .auth_display {
-    margin-top: 3%;
-    position: absolute;
-    left: 50%;
-    top: 3%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  margin-top: 10%;
+  position: relative;
+  -webkit-transform: translate(50%, 50%);
+  transform: translate(50%, 50%);
+  left: 200px;
+  width: 800px;
+  height: 400px;
+}
+
+input[type=text] {
+  width: 200px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+
+.button-display {
+  margin-top: 36%;
+  position:absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.answer {
+  margin-top: 38%;
+  position: absolute;
+  left: 50%;
+  top: 3%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
