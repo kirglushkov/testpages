@@ -75,7 +75,7 @@ input[type=text]:focus {
 
 .button-display {
   display: flex;
-  margin-top: 20vh;
+  margin-top: 30vh;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -84,7 +84,7 @@ input[type=text]:focus {
 
 .answer {
   display: flex;
-  margin-top: 30vh;
+  margin-top: 40vh;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
