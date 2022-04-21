@@ -45,14 +45,15 @@ h1 span:before{
 .auth_display {
   display: grid;
   gap: 20px;
-  grid-template-columns: 1fr;
-  margin-top: 10%;
   position: relative;
+  grid-template-columns: 1fr;
+  width: 80vh;
+  height: 40vh;
+  margin-left: 20vh;
+  margin-right: 20vh;
   -webkit-transform: translate(50%, 50%);
   transform: translate(50%, 50%);
-  left: 200px;
-  width: 800px;
-  height: 400px;
+  text-align: center;
 }
 
 input[type=text] {
@@ -70,7 +71,7 @@ input[type=text]:focus {
 }
 
 .button-display {
-  margin-top: 36%;
+  margin-top: 37%;
   position:absolute;
   left: 50%;
   top: 0;
@@ -79,7 +80,7 @@ input[type=text]:focus {
 }
 
 .answer {
-  margin-top: 38%;
+  margin-top: 40%;
   position: absolute;
   left: 50%;
   top: 3%;
