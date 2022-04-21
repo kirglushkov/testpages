@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 7
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+
+            let m_barabana = parseInt(document.getElementById("auth_x").value);
+
+            let m_gruza = parseInt(document.getElementById("auth_y").value);
+            
+
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+
+            let number = roundNumber((2 * m_gruza * 10 ) / (m_barabana + (2 * m_gruza)), 3)
+
+            document.getElementById("answer").innerText = "Ответ: " + number + " м/с^2";
+        }
+    
+      </script>
+
+      <body>
+        <div class="container">
+            <h1><span>На барабан массой X кг намотан шнур, к концу которого привязан груз массой Y кг. Найдите ускорение груза. Барабан считать однородным цилиндром. Трением пренебречь.</span></h1>
+            
+        </div>
+        <div class="display" id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_x" placeholder="Введите массу барабана в кг"></input>
+                <input type="text" id="auth_y" placeholder="Введите массу грузаа привязанного к концу шнура барабана в кг"></input>
+            </form>
+        </div>
+        <br>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
+        <div class="answer">
+            <h1><span id="answer">Ответ:</span></h1>
+        </div>
+    
+</body>
+</html>
