@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 7
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+
+            let v_ballona = parseInt(document.getElementById("auth_x").value);
+
+            let t_ballona = parseInt(document.getElementById("auth_y").value);
+
+            let z = parseInt(document.getElementById("auth_z").value);
+
+            let new_v_ballona = v_ballona / 1000
+
+            let new_z = z * 1000
+            
+
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+
+            let number = roundNumber((new_v_ballona * 28 * 0.001 * new_z ) / (8.34 * t_ballona), 3)
+
+            document.getElementById("answer").innerText = "Ответ: " + number + " кг";
+        }
+    
+      </script>
+
+      <body>
+        <div class="container">
+            <h1><span>Баллон вместимостью V = X л заполнен азотом при температуре T= Y К. Когда часть газа израсходовали, давление в баллоне понизилось на ΔP= Z кПа. Определить массу m израсходованного газа. Процесс считать изотермическим.</span></h1>
+            
+        </div>
+        <div id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_x" placeholder="Введите вместимость баллона с азотом в литрах"></input>
+                <input type="text" id="auth_y" placeholder="Введите температуру баллона с азотом в Кельвинах"></input>
+                <input type="text" id="auth_z" placeholder="Введите число Z в кПа"></input>
+            </form>
+        </div>
+        <br>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
+        <div class="answer">
+            <h1><span id="answer">Ответ: 0 кг</span></h1>
+        </div>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 7
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+
+            let plot = parseInt(document.getElementById("auth_p").value);
+
+            let v_mol = parseInt(document.getElementById("auth_v").value);
+            
+            let number = (v_mol*v_mol) / (plot * 3)
+
+
+            document.getElementById("answer").innerText = "Ответ: " + number + " кПА";
+        }
+    
+      </script>
+
+      <body>
+        <div class="container">
+            <h1><span>Каково давление газа, если его плотность X кг/м^3 , а среднеквадратичная скорость его молекул Y м/с?</span></h1>
+            
+        </div>
+        <div id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_p" placeholder="Введите плотность газа в кг/м^3"></input>
+                <input type="text" id="auth_v" placeholder="Введите среднеквадратичную скорость его молекул в м/с"></input>
+            </form>
+        </div>
+        <br>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
+        <div class="answer">
+            <h1><span id="answer">Ответ: 0 кПА</span></h1>
+        </div>
+    
+</body>
+</html>
