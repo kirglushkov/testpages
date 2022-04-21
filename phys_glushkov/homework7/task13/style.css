@@ -32,7 +32,7 @@ h1{
 h1 span{width:100%;position:relative}
 
 h1 span:before{
-	background:linear-gradient(45deg,#fc5c7d,#6a82fb,#fc5c7d);
+	background:linear-gradient(45deg,#fca45c,#6afbf6,#fc5c99);
 	width:100%;
 	height:100%;
 	display:block;
@@ -45,15 +45,18 @@ h1 span:before{
 .auth_display {
   display: grid;
   gap: 20px;
-  position: relative;
   grid-template-columns: 1fr;
   width: 80vh;
   height: 40vh;
-  margin-left: 20vh;
-  margin-right: 20vh;
-  -webkit-transform: translate(50%, 50%);
-  transform: translate(50%, 50%);
-  text-align: center;
+}
+
+.display {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-transform: translate(0%, 50%);
+  transform: translate(0%, 50%);
 }
 
 input[type=text] {
@@ -71,19 +74,18 @@ input[type=text]:focus {
 }
 
 .button-display {
-  margin-top: 37%;
-  position:absolute;
+  display: flex;
+  margin-top: 25vh;
   left: 50%;
-  top: 0;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+
 }
 
 .answer {
-  margin-top: 40%;
-  position: absolute;
+  display: flex;
+  margin-top: 35vh;
   left: 50%;
-  top: 3%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -91,7 +93,7 @@ input[type=text]:focus {
 .button {
   display: inline-block;
   border-radius: 4px;
-  background-color: #f4511e;
+  background-color: #1e90f4;
   border: none;
   color: #FFFFFF;
   text-align: center;

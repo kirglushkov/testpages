@@ -45,15 +45,18 @@ h1 span:before{
 .auth_display {
   display: grid;
   gap: 20px;
-  position: absolute;
   grid-template-columns: 1fr;
   width: 80vh;
   height: 40vh;
-  margin-left: 20vh;
-  margin-right: 20vh;
-  -webkit-transform: translate(50%, 50%);
-  transform: translate(50%, 50%);
-  text-align: center;
+}
+
+.display {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-transform: translate(0%, 50%);
+  transform: translate(0%, 50%);
 }
 
 input[type=text] {
@@ -71,19 +74,18 @@ input[type=text]:focus {
 }
 
 .button-display {
-  margin-top: 36%;
-  position:absolute;
+  display: flex;
+  margin-top: 20vh;
   left: 50%;
-  top: 0;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+
 }
 
 .answer {
-  margin-top: 38%;
-  position: absolute;
+  display: flex;
+  margin-top: 30vh;
   left: 50%;
-  top: 3%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
