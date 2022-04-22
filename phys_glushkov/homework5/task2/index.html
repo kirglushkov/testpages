@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 5 task 2
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+
+            let degr = parseInt(document.getElementById("auth_a").value);
+
+            let y_const = parseInt(document.getElementById("auth_y").value);
+            
+
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+
+            var toRadians = function (degree) {
+                return degree * (Math.PI / 180);
+            };
+
+            function tag(number){
+                return roundNumber(Math.tan(toRadians(number)));
+            }
+
+            let tangens = tag(degr) 
+            console.log(degr)
+            console.log(tangens)
+
+            let number = roundNumber(((2*tangens) / y_const), 3)
+
+            document.getElementById("answer").innerText = "Ответ: " + number + "";
+        }
+    
+      </script>
+
+      <body>
+        <div class="container">
+            <h1><span>Небольшой брусок начинает скользить по наклонной плоскости, составляющий угол α с горизонтом. Коэффициент трения зависит от пройденного пути х по закону μ = γx, где γ – константа. Найти путь, пройденный бруском до остановки.</span></h1>
+            
+        </div>
+        <div class="display" id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_a" placeholder="Введите угол A в радианах"></input>
+                <input type="text" id="auth_y" placeholder="Введите константу Y"></input>
+            </form>
+        </div>
+        <br>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
+        <div class="answer">
+            <h1><span id="answer">Ответ:</span></h1>
+        </div>
+    
+</body>
+</html>
