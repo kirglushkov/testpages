@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 6 task 6
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+
+            let x_num = parseInt(document.getElementById("auth_x").value) / 100;
+
+            let y_num = parseInt(document.getElementById("auth_y").value);
+
+            let z_num = parseInt(document.getElementById("auth_z").value) / 100;
+
+            console.log(x_num, y_num, z_num)
+
+            let k = (2 * y_num) / (x_num*x_num)
+
+            let delta_x = x_num + z_num
+
+            let vichislenie = (k * (delta_x*delta_x)) / 2
+
+            console.log(k, delta_x, vichislenie)
+
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+
+            let number = roundNumber((vichislenie - y_num), 3)
+
+            document.getElementById("answer").innerText = "Ответ: " + number + " Дж";
+        }
+    
+      </script>
+
+      <body>
+        <div class="container">
+            <h1>
+                <span>
+                    Недеформированную пружину сжали на X см, совершив при этом работу Y Дж. Какую минимальную работу нужно совершить дополнительно, чтобы сжать её ещё на Z см?
+
+                </span>
+            </h1>
+            
+        </div>
+        <div class="display" id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_x" placeholder="Введите длину сжатия недеформированной пружины в сантиметрах"></input>
+                <input type="text" id="auth_y" placeholder="Введите работу Y в джоулях"></input>
+                <input type="text" id="auth_z" placeholder="Введите число Z в сантиметрах"></input>
+            </form>
+        </div>
+        <br>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
+        <div class="answer">
+            <h1><span id="answer">Ответ: </span></h1>
+        </div>
+    
+</body>
+</html>
