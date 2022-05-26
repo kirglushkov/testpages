@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 6 task 1
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+
+            let v_molya = parseInt(document.getElementById("auth_x").value);
+
+            let t_give = parseFloat(document.getElementById("auth_y").value);
+            
+            let a_gas = parseFloat(document.getElementById("auth_z").value);
+            
+
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+
+            let number = roundNumber((2 * ((t_give*1000) - a_gas)) / (5 * v_molya * 8.31), 3)
+
+            document.getElementById("answer").innerText = "Ответ: " + number + " К";
+        }
+    
+      </script>
+
+      <body>
+        <div class="container">
+            <h1>
+                <span>
+                    Двухатомному газу в количестве 2 моля передано 2,2 кДж теплоты, при
+этом газ совершил работу 400 Дж. Насколько изменилась температура газа?
+                </span>
+            </h1>
+            
+        </div>
+        <div class="display" id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_x" placeholder="Введите количество молей X"></input>
+                <input type="text" id="auth_y" placeholder="Введите сколько передано теплоты в кДЖ Y"></input>
+                <input type="text" id="auth_z" placeholder="Введите работу газа в Z дж"></input>
+            </form>
+        </div>
+        <br>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
+        <div class="answer">
+            <h1><span id="answer">Ответ: </span></h1>
+        </div>
+    
+</body>
+</html>

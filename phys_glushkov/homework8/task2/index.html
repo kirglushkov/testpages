@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 8 task 2
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+            let m_azota = parseInt(document.getElementById("auth_x").value);
+
+            let temperatura = parseInt(document.getElementById("auth_y").value);           
+
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+
+            let number = roundNumber((2.5 * (m_azota / (28 * 0.001))) * 8.31 * temperatura / 1000, 3)
+
+            document.getElementById("answer").innerText = "Ответ: " + number + "кДЖ";
+        }
+      </script>
+
+      <body>
+        <div class="container">
+            <h1>
+                <span>
+                    Вычислите увеличение внутренней энергии азота массой X кг при повышении его температуры на Y градусов Цельсия
+                </span>
+                <br>
+                 <span>
+                      а) изохорно б) изобарно : Изменение внутренней энергии не зависит от процесса
+                </span>
+            </h1>
+        </div>
+        <div class="display" id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_x" placeholder="Введите массу азота в кг"></input>
+                <input type="text" id="auth_y" placeholder="Введите повышение температуры в градусах Цельсия"></input>
+            </form>
+        </div>
+        <br>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
+        <div class="answer">
+            <h1><span id="answer">Ответ: 0 кДЖ</span></h1>
+        </div>
+</body>
+</html>
