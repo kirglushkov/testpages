@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 10 task 1
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+            let x = parseFloat(document.getElementById("auth_x").value);
+
+            let y = parseFloat(document.getElementById("auth_y").value);  
+
+            let z = parseFloat(document.getElementById("auth_z").value);            
+
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+            
+            let first = (x / 10**9) + (y / 10**9)
+
+            let k = 9 * 10**9
+
+            let new_z = (z / 100)**2
+
+            let number = roundNumber(((k * first**2) / ( new_z * 4 * 81)) * 10**6 , 3)
+
+            document.getElementById("answer").innerText = "Ответ: " + number + "мкН";
+        }
+      </script>
+
+      <body>
+        <div class="container">
+            <h1>
+                <span>
+                    Два одинаковых маленьких металлических шарика с зарядами X и Y нКл находятся в воздухе на
+                    расстоянии Z см. Шарики приводят в соприкосновение, а затем разводят на такое же расстояние и помещают в
+                    воду. <br> Найти силу их взаимодействия после соприкосновения.
+                </span>
+            </h1>
+        </div>
+        <div class="display" id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_x" placeholder="Введите X в нКл"></input>
+                <input type="text" id="auth_y" placeholder="Введите Y в нКл"></input>
+                <input type="text" id="auth_z" placeholder="Введите расстояние Z в см"></input>
+            </form>
+        </div>
+        <br>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
+        <div class="answer">
+            <h1><span id="answer">Ответ: 0 </span></h1>
+        </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 9 task 6
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+
+            let t_ice = parseFloat(document.getElementById("auth_x").value);
+
+            let t_water = parseFloat(document.getElementById("auth_y").value);
+            
+            let m_ice = parseFloat(document.getElementById("auth_z").value);
+            
+
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+          if ((m_ice > 0) && (t_ice <= 1) && ((t_water <= 100) && (t_water >= 0))) {
+            let number = roundNumber((2100 * m_ice * (0 - t_ice)) + (3.4 * 10**5 * m_ice) + (4200 * m_ice * t_water), 3)
+            let new_number = number / 1000
+            document.getElementById("answer").innerText = "Ответ: " + new_number + " кДЖ";
+            } else {
+                document.getElementById("answer").innerText = "Ответ: проверьте значения X и Y";
+            }
+        }
+    
+      </script>
+
+      <body>
+        <div class="container">
+            <h1>
+                <span>
+                    Лед, взятый при температуре X градусов Цельсия
+                    нагревают до воды с температурой Y градусов Цельсия.
+                    Масса льда Z кг.
+                    Определите количество затраченной энергии.
+                </span>
+            </h1>
+            
+        </div>
+        <div class="display" id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_x" placeholder="Введите температуру льда X в градусах Цельсия"></input>
+                <input type="text" id="auth_y" placeholder="Введите температуру нагрева Y в градусах цельсия"></input>
+                <input type="text" id="auth_z" placeholder="Введите массу льда Z в кг"></input>
+            </form>
+        </div>
+        <br>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
+        <div class="answer">
+            <h1><span id="answer">Ответ: </span></h1>
+        </div>
+    
+</body>
+</html>

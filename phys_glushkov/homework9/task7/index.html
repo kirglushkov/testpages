@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 9 task 7
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+            let x = parseFloat(document.getElementById("auth_x").value);
+
+            let y = parseFloat(document.getElementById("auth_y").value);           
+
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+
+            if ((x>0) && (y>0)) {
+                let number = roundNumber(((x / 10**14) * 9.8) / (y * (1.6 / 10**19)), 3)
+                document.getElementById("answer").innerText = "Ответ: " + number + " Н/Кл";
+            } else {
+                document.getElementById("answer").innerText = "Ответ: X > 0 & Y > 0";
+            }
+        }
+      </script>
+
+      <body>
+        <div class="container">
+            <h1>
+                <span>
+                    Пылинка массой X^-11 г имеет заряд, равный Y элементарным, находится в однородном электрическом
+                    поле в состоянии равновесия. Найти напряженность поля.
+                </span>
+            </h1>
+        </div>
+        <div class="display" id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_x" placeholder="Введите X в граммах"></input>
+                <input type="text" id="auth_y" placeholder="Введите заряд Y"></input>
+            </form>
+        </div>
+        <br>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
+        <div class="answer">
+            <h1><span id="answer">Ответ: 0 </span></h1>
+        </div>
+</body>
+</html>
