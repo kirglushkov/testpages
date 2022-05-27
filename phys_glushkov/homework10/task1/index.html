@@ -21,16 +21,17 @@
                 decimals = decimals || 5;
                 return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
             }
+
+            if ((x > 0) && (y > 0) && (z>0)) {
+                let first = (x / 10**9) + (y / 10**9)
+                let k = 9 * 10**9
+                let new_z = (z / 100)**2
+                let number = roundNumber(((k * first**2) / ( new_z * 4 * 81)) * 10**6 , 2)
+                document.getElementById("answer").innerText = "Ответ: " + number + "мкН";
+            } else {
+                document.getElementById("answer").innerText = "Ответ: проверьте значения X и Y и Z";
+            }
             
-            let first = (x / 10**9) + (y / 10**9)
-
-            let k = 9 * 10**9
-
-            let new_z = (z / 100)**2
-
-            let number = roundNumber(((k * first**2) / ( new_z * 4 * 81)) * 10**6 , 3)
-
-            document.getElementById("answer").innerText = "Ответ: " + number + "мкН";
         }
       </script>
 
