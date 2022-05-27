@@ -12,21 +12,21 @@
     <script>
         function run() {
 
-            let v_molya = parseInt(document.getElementById("auth_x").value);
-
-            let t_give = parseFloat(document.getElementById("auth_y").value);
+            let x = parseFloat(document.getElementById("auth_x").value);
             
-            let a_gas = parseFloat(document.getElementById("auth_z").value);
+            let y = parseFloat(document.getElementById("auth_y").value);
             
 
             var roundNumber = function(number, decimals) {
                 decimals = decimals || 5;
                 return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
             }
-
-            let number = roundNumber((2 * ((t_give*1000) - a_gas)) / (5 * v_molya * 8.31), 3)
-
-            document.getElementById("answer").innerText = "Ответ: " + number + " К";
+            if ((x>0) && (y>0)) {
+            let number = roundNumber((x / 10**14) * 9.8 / (y *(1.6 / 10**19)), 3)
+            document.getElementById("answer").innerText = "Ответ: " + number + " Н/Кл";
+            } else {
+                document.getElementById("answer").innerText = "Ответ: X>0 & Y>0 ";
+            }
         }
     
       </script>
@@ -35,8 +35,8 @@
         <div class="container">
             <h1>
                 <span>
-                    Двухатомному газу в количестве X моля передано Y кДж теплоты, при
-этом газ совершил работу Z Дж. Насколько изменилась температура газа?
+                    Пылинка массой X^-11 г имеет заряд, равный Y элементарным, находится в однородном электрическом
+                    поле в состоянии равновесия. Найти напряженность поля.
                 </span>
             </h1>
             
@@ -45,7 +45,6 @@
             <form class="auth_display">
                 <input type="text" id="auth_x" placeholder="Введите количество молей X"></input>
                 <input type="text" id="auth_y" placeholder="Введите сколько передано теплоты в кДЖ Y"></input>
-                <input type="text" id="auth_z" placeholder="Введите работу газа в Z дж"></input>
             </form>
         </div>
         <br>  
