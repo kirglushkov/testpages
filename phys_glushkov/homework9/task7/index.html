@@ -21,8 +21,8 @@
             }
 
             if ((x>0) && (y>0)) {
-                let number = roundNumber(((x / 10**14) * 9.8) / (y * (1.6 / 10**19)), 3)
-                document.getElementById("answer").innerText = "Ответ: " + number + " Н/Кл";
+                let number = roundNumber(y**2 - (x/y), 3)
+                document.getElementById("answer").innerText = "Ответ: " + number + " β";
             } else {
                 document.getElementById("answer").innerText = "Ответ: X > 0 & Y > 0";
             }
@@ -33,15 +33,15 @@
         <div class="container">
             <h1>
                 <span>
-                    Пылинка массой X^-11 г имеет заряд, равный Y элементарным, находится в однородном электрическом
-                    поле в состоянии равновесия. Найти напряженность поля.
+                    В некотором процессе объем меняется по закону p(V) = βV
+                    2. Какую работу газ совершит при изменении объема от X m^3 до Y m^3?
                 </span>
             </h1>
         </div>
         <div class="display" id="auth_display">
             <form class="auth_display">
-                <input type="text" id="auth_x" placeholder="Введите X в граммах"></input>
-                <input type="text" id="auth_y" placeholder="Введите заряд Y"></input>
+                <input type="text" id="auth_x" placeholder="Введите X"></input>
+                <input type="text" id="auth_y" placeholder="Введите Y"></input>
             </form>
         </div>
         <br>  
