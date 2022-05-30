@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 12 task 2
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+
+            let x = parseFloat(document.getElementById("auth_x").value);
+            
+            let y = parseFloat(document.getElementById("auth_y").value) / 1000;
+            
+            let z = parseFloat(document.getElementById("auth_z").value) / 100;
+            
+            let k = parseFloat(document.getElementById("auth_k").value);
+
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+
+            var new_x = function(eks) {
+                if (eks % 2 == 1) {
+                    return eks - 1
+                } else {
+                    return eks
+                }
+
+            }
+            if ((x>0) && (y>0) && (z>0) && (k>0)) {
+            let e = 8.85 / 10**12
+            let number = roundNumber((e * k * new_x(x) * z )/ y, 12)
+            document.getElementById("answer").innerText = "Ответ: " + number + " Ф";
+            } else {
+                document.getElementById("answer").innerText = "Ответ: все переменные должны быть > 0 ";
+            }
+        }
+    
+      </script>
+
+      <body>
+        <div class="container">
+            <h1>
+                <span>
+                    Конденсатор состоит из X алюминиевых листов. Между этими листами проложены бумажные пластины
+                    толщиной Y мм. Площади латунных листов и стекла одинаковы и равны Z см² каждая. Листы соединены
+                    так, что образуют батарею параллельно соединенных конденсаторов. Определить электроемкость этой
+                    батареи, если относительная диэлектрическая проницаемость бумаги равна K.
+                </span>
+            </h1>
+            
+        </div>
+        <div class="display" id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_x" placeholder="Введите количество алюминиевых листов X"></input>
+                <input type="text" id="auth_y" placeholder="Введите толщину Y в мм"></input>
+                <input type="text" id="auth_z" placeholder="Введите Z в см²"></input>
+                <input type="text" id="auth_k" placeholder="Введите K"></input>
+            </form>
+        </div>
+        <br>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
+        <div class="answer">
+            <h1><span id="answer">Ответ: </span></h1>
+        </div>
+    
+</body>
+</html>

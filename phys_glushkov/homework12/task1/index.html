@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 12 task 1
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+            let x = parseFloat(document.getElementById("auth_x").value);
+
+            let y = parseFloat(document.getElementById("auth_y").value);  
+
+            let z1 = parseFloat(document.getElementById("auth_z1").value);    
+            
+            let z2 = parseFloat(document.getElementById("auth_z2").value);
+
+            let k1 = parseFloat(document.getElementById("auth_k1").value);  
+
+            let k2 = parseFloat(document.getElementById("auth_k2").value); 
+
+            let new_y = y / 10**3
+            let new_d1 = z2 / 10**3
+            let new_d2 = k2 / 10**3
+
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+
+            if ((x > 0) && (y > 0) && (z1>0) && (z2>0) && (k1>0) && (k2>0)) {
+                let e = 8.85 / 10**3
+                let number = roundNumber((e*x) / (new_d2/k1 + new_d1/z1), 3)
+                document.getElementById("answer").innerText = "Ответ: " + number + "нФ";
+            } else {
+                document.getElementById("answer").innerText = "Ответ: проверьте значения X и Y и Z";
+            }
+            
+        }
+      </script>
+
+      <body>
+        <div class="container">
+            <h1>
+                <span>
+                    Площадь каждой обкладки плоского конденсатора S= X м^2, расстояние между обкладками d= Y мм. Зазор
+                    между обкладками заполнен двухслойным диэлектриком.
+                    Проницаемость и толщина первого слоя ε1= Z1 , d1= Z2
+                    мм, второго слоя ε2= K1, d2= K2 мм. <br> Найти емкость C конденсатора.
+                </span>
+            </h1>
+        </div>
+        <div class="display" id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_x" placeholder="Введите X в m^2"></input>
+                <input type="text" id="auth_y" placeholder="Введите Y в mm"></input>
+                <input type="text" id="auth_z1" placeholder="Введите проницаемость расстояние Z1 в mm"></input>
+                <input type="text" id="auth_z2" placeholder="Введите толщину Z2 в mm"></input>
+                <input type="text" id="auth_k1" placeholder="Введите проницаемость расстояние K1 в mm"></input>
+                <input type="text" id="auth_k2" placeholder="Введите толщину K2 в mm"></input>
+            </form>
+        </div>
+        <br>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
+        <div class="answer">
+            <h1><span id="answer">Ответ: 0 </span></h1>
+        </div>
+</body>
+</html>
