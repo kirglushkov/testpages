@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 11 task 7
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+
+            let x = parseFloat(document.getElementById("auth_x").value);
+            
+            let y = parseFloat(document.getElementById("auth_y").value);
+            
+
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+            if ((x>0) && (y>0)) {
+            let number = roundNumber((9*(10**9)*y)/(x/10**2) / 10**6, 3)
+            document.getElementById("answer").innerText = "Ответ: " + number + " В";
+            } else {
+                document.getElementById("answer").innerText = "Ответ: X>0 & Y>0 ";
+            }
+        }
+    
+      </script>
+
+      <body>
+        <div class="container">
+            <h1>
+                <span>
+                    Найти потенциал в центре полукольца радиусом X см, по которому равномерно распределен заряд Y Кл
+                </span>
+            </h1>
+            
+        </div>
+        <div class="display" id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_x" placeholder="Введите массу радиус полукольца X"></input>
+                <input type="text" id="auth_y" placeholder="Введите заряд Y в Кл"></input>
+            </form>
+        </div>
+        <br>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
+        <div class="answer">
+            <h1><span id="answer">Ответ: </span></h1>
+        </div>
+    
+</body>
+</html>

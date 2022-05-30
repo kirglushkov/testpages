@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics homework 11 task 8
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        function run() {
+
+            let x = parseFloat(document.getElementById("auth_x").value);
+            
+            let y = parseFloat(document.getElementById("auth_y").value);
+                        
+            let z = parseFloat(document.getElementById("auth_z").value);
+            
+
+            var roundNumber = function(number, decimals) {
+                decimals = decimals || 5;
+                return Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+            if ((x>0) && (y>0)) {
+            let q = z - (0 - z)
+            let kq = 2 * 9*(10**9)
+            let number = roundNumber((kq * (z / 10**6) * ((1/(x/100)) -( 1/ Math.sqrt((x/100)**2 + (y/100)**2))) )/ 1000, 3)
+            document.getElementById("answer").innerText = "Ответ: " + number + " кВТ";
+            } else {
+                document.getElementById("answer").innerText = "Ответ: X>0 & Y>0 & Z>0";
+            }
+        }
+    
+      </script>
+
+      <body>
+        <div class="container">
+            <h1>
+                <span>
+                    Имеются два тонких проволочных кольца радиуса R каждое, оси которых совпадают. Заряды колец равны q
+                    и -q. Найти разность потенциалов между центрами колец, отстоящими друг от друга на расстояние l, если
+                    R= X см, l= Y см и q= Z мкКл
+                </span>
+            </h1>
+            
+        </div>
+        <div class="display" id="auth_display">
+            <form class="auth_display">
+                <input type="text" id="auth_x" placeholder="Введите X"></input>
+                <input type="text" id="auth_y" placeholder="Введите Y"></input>
+                <input type="text" id="auth_z" placeholder="Введите Z"></input>
+            </form>
+        </div>
+        <br>  
+        <div class="button-display">
+        <button class="button" onclick="run()"><span>Посчитать</span></button>
+        </div>
+        <div class="answer">
+            <h1><span id="answer">Ответ: </span></h1>
+        </div>
+    
+</body>
+</html>
